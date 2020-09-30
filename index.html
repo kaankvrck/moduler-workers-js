@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moduler Workers Server | Kaan KIVIRCIK</title>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/514034c92a.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 'Abel', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 20px; margin-bottom: 20px; background-color: floralwhite;">
+        <div class="card row" style="background-color: beige;">
+            <div class="card-header text-center font-weight-bold"> Workers Project | Kaan KIVIRCIK</div>
+            <div class="card-body">
+                <form name="form" id="employee-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Worker Name">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control" name="department" id="department" placeholder="Department">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <input type="number" class="form-control" name="salary" id="salary" placeholder="Salary">
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="all-buttons row">
+                    <div class="buttons col-md-6 " >
+                        <button id="add" class="btn btn-danger">Add Worker</button>
+                        <button id="clear-all" class="btn btn-danger" >Clear All Workers</button>
+                    </div>
+                    <div class="invisible-buttons col-md-6">
+                        <button id="update" class="btn btn-dark" style="display: none;">Update Worker</button>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <br>
+        <div class="row" >
+            <div class="card col-md-8" style="background-color: beige;">
+                <div class="card-header font-weight-bold">Filter Workers</div>
+                <div class="card-body form-row d-flex justify-content-around align-items-center">
+                    <div class="form-group col-md-9" style="margin-bottom: 0px;">
+                        <input type="text" class="form-control" name="filter" id="filter" placeholder="Search worker">
+                    </div>
+                    <button id="filter-btn" class="btn btn-dark col-md-3" style="width: 178px; height: 38px;">Search</button>
+                </div>
+            </div>
+            <div class="card-body col-md-4 d-flex justify-content-center" id="logo">
+                <img  src="./src/logo_transparent.png" alt="Project Aquarius" width="170px" height="190px">
+            </div>
+        </div>
+        <br>
+        <div class="card row" style="background-color: beige;">
+            <div class="card-header font-weight-bold">Workers</div>
+            <div class="card-body">
+                <table class="table table-dark" style="border-radius: 15px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "employees">
+                        <!-- <tr>
+                            
+                            <td>Kaan KIVIRCIK</td>
+                            <td>Founder</td>
+                            <td>15000</td>
+                            <td>1</td>
+                            <td style="width: 50px; height: auto;"><a href="#" id = "update-employee" class= "btn btn-danger">Güncelle</a></td> 
+                            <td style="width: 90px; height: auto;"> <a href="#" id = "delete-employee" class= "btn btn-danger">Sil</a> </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="./bundles/bundle.js"></script>
+</body>
+
+</html>
